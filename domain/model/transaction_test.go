@@ -4,9 +4,9 @@ import (
 	"testing"
 
 	uuid "github.com/satori/go.uuid"
+	"github.com/valentimcanejo/codepix/domain/model"
 
 	"github.com/stretchr/testify/require"
-	"github.com/valentimcanejo/codepix/domain/model"
 )
 
 func TestNewTransaction(t *testing.T) {
@@ -32,6 +32,7 @@ func TestNewTransaction(t *testing.T) {
 	statusTransaction := "pending"
 	transaction, err := model.NewTransaction(account, amount, pixKey, "My description", "")
 	//
+
 	require.Nil(t, err)
 	require.NotNil(t, uuid.FromStringOrNil(transaction.ID))
 	require.Equal(t, transaction.Amount, amount)
@@ -42,6 +43,7 @@ func TestNewTransaction(t *testing.T) {
 	pixKeySameAccount, err := model.NewPixKey(kind, account, key)
 
 	_, err = model.NewTransaction(account, amount, pixKeySameAccount, "My description", "")
+
 	require.NotNil(t, err)
 
 	_, err = model.NewTransaction(account, 0, pixKey, "My description", "")

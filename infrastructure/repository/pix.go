@@ -7,14 +7,6 @@ import (
 	"gorm.io/gorm"
 )
 
-// type PixKeyRepositoryInterface interface {
-// 	RegisterKey(pixKey *PixKey) (*PixKey, error)
-// 	FindKeyByKind(key string, kind string) (*PixKey, error)
-// 	AddBank(bank *Bank) error
-// 	AddAccount(account *Account) error
-// 	FindAccount(id string) (*Account, error)
-// }
-
 type PixKeyRepositoryDb struct {
 	Db *gorm.DB
 }
