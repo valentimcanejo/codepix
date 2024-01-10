@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package github.com.codeedu.codepix;
+package github.com.valentimcanejo.codepix;
 
-option go_package = "protofiles;pb";
+option go_package = "github.com/valentimcanejo/codepix/protofiles;pb";
 
 message PixKeyRegistration {
     string kind = 1;
